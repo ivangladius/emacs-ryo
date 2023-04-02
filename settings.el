@@ -1,21 +1,26 @@
 
 ;; (shell-command "xmodmap ~/.Xmodmap")
 
-
+(let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
+  (setenv "PATH" path)
+  (setq exec-path 
+        (append
+         (split-string-and-unquote path ":")
+         exec-path)))
 
 (use-package doom-themes
   :ensure t)
 
-(load-theme 'doom-gruvbox-light t)
+(load-theme 'doom-meltbus t)
 
 ;;(global-display-line-numbers-mode 1)
 ;;(setq display-line-numbers-type 'relative)
 
 
 (set-face-attribute 'default nil
-                    :family "Hack"
-                    :height 130
-                    :weight 'normal
+                    :family "Terminus"
+                    :height 170
+                    :weight 'bold
                     :width 'normal)
 
 

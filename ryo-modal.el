@@ -29,8 +29,8 @@
   :demand t
   :commands ryo-modal-mode
   :init
-  (setq ryo-modal-cursor-color "black"
-	ryo-modal-default-cursor-color "black")
+  ;; (setq ryo-modal-cursor-color "black"
+  ;; 	ryo-modal-default-cursor-color "black")
   
   :bind ([escape] . ryo-modal-mode)
   :config
@@ -65,6 +65,9 @@
    ("x" delete-char)
 
    ("y" undo)
+
+   ("0" avy-goto-char)
+   ("9" avy-goto-line)
 
    ("SPC [" yank))
 
@@ -126,17 +129,17 @@
 
   (ryo-modal-mode))
 
-(defun my-ryo/mode-line ()
-  (if (not ryo-modal-mode)
-      (set-face-attribute 'mode-line nil
-			  :foreground "#FFFFFF"
-			  :background "#000000")
-    (set-face-attribute 'mode-line nil
-			:foreground "#a52a2a"
-			:background "#e1d8b3")))
+;; (defun my-ryo/mode-line ()
+;;   (if (not ryo-modal-mode)
+;;       (set-face-attribute 'mode-line nil
+;; 			  :foreground "#FFFFFF"
+;; 			  :background "#000000")
+;;     (set-face-attribute 'mode-line nil
+;; 			:foreground "#a52a2a"
+;; 			:background "#e1d8b3")))
 
 
 
 
-(add-hook 'post-command-hook #'my-ryo/mode-line)
+;; (add-hook 'post-command-hook #'my-ryo/mode-line)
 (add-hook 'buffer-list-update-hook 'my-ryo-global-mode)
