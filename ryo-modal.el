@@ -18,6 +18,17 @@
 ;;    (unless (or minibufferp (bound-and-true-p eshell-mode)) 
 ;;      (ryo-modal-mode 1))))
 ;;
+<<<<<<< HEAD
+=======
+
+;; remove which key weird symbols
+
+
+
+(push '((nil . "ryo:.*:") . (nil . "")) which-key-replacement-alist)
+
+
+>>>>>>> d21b38c (new)
 (defun my-ryo-global-mode ()
   (if (not (or (active-minibuffer-window) (eq major-mode 'eshell-mode)))
       (ryo-modal-mode 1)))
@@ -118,7 +129,11 @@
    ("SPC o"
     (("e" eval-last-sexp)
      ("d" eval-defun)
+<<<<<<< HEAD
 	 ("c" comment-or-uncomment-region))))
+=======
+     ("c" comment-or-uncomment-region))))
+>>>>>>> d21b38c (new)
 
   ;; ;; ISEARCH
   ;; (ryo-modal-major-mode-keys

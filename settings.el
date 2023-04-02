@@ -8,6 +8,17 @@
          (split-string-and-unquote path ":")
          exec-path)))
 
+<<<<<<< HEAD
+=======
+
+
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+
+
+>>>>>>> d21b38c (new)
 (use-package doom-themes
   :ensure t)
 
